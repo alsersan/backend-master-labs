@@ -2,4 +2,4 @@
 
 ![Basic modeling](./basic-modeling.jpg)
 
-[HTML report](./html-report/index.html)
+[HTML report](https://00-modeling-00-basic-modeling.netlify.app/)
