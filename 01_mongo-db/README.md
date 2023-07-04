@@ -61,21 +61,61 @@ db.listingsAndReviews
   - Sólo muestra: nombre, precio, camas y baños.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find(
+  {
+    beds: 4,
+    bathrooms: { $gte: 2 },
+  },
+  {
+    _id: 0,
+    name: 1,
+    price: 1,
+    beds: 1,
+    bathrooms: 1,
+  }
+);
 ```
 
 - Aunque estamos de viaje no queremos estar desconectados, así que necesitamos que el alojamiento también tenga conexión wifi. A los requisitos anteriores, hay que añadir que el alojamiento tenga wifi.
   - Sólo muestra: nombre, precio, camas, baños y servicios (`amenities`).
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find(
+  {
+    beds: 4,
+    bathrooms: { $gte: 2 },
+    amenities: { $all: ['Wifi'] },
+  },
+  {
+    _id: 0,
+    name: 1,
+    price: 1,
+    beds: 1,
+    bathrooms: 1,
+    amenities: 1,
+  }
+);
 ```
 
 - Y bueno, un amigo trae a su perro, así que tenemos que buscar alojamientos que permitan mascota (_Pets allowed_).
   - Sólo muestra: nombre, precio, camas, baños y servicios (`amenities`).
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find(
+  {
+    beds: 4,
+    bathrooms: { $gte: 2 },
+    amenities: { $all: ['Wifi', 'Pets allowed'] },
+  },
+  {
+    _id: 0,
+    name: 1,
+    price: 1,
+    beds: 1,
+    bathrooms: 1,
+    amenities: 1,
+  }
+);
 ```
 
 ### Operadores lógicos
