@@ -7,8 +7,6 @@ https://www.lemoncode.tv/curso/docker-y-mongodb/leccion/restaurando-backup-mongo
 
 > Acuerdate de mirar si en el directorio `/opt/app` del contenedor Mongo hay contenido de backups previos que haya que borrar
 
-Para entregar las soluciones, añade un README.md a tu repositorio del bootcamp incluyendo enunciado y consulta (lo que pone '_Pega aquí tu consulta_').
-
 ## Introducción
 
 En este base de datos puedes encontrar un montón de alojamientos y sus reviews, esto está sacado de hacer webscrapping.
@@ -28,7 +26,9 @@ Esta es la parte mínima que tendrás que entregar para superar este laboratorio
 - Saca en una consulta cuantos alojamientos hay en España.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find({
+  'address.country': 'Spain',
+});
 ```
 
 - Lista los 10 primeros:
@@ -36,7 +36,21 @@ Esta es la parte mínima que tendrás que entregar para superar este laboratorio
   - Sólo muestra: nombre, precio, camas y la localidad (`address.market`).
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews
+  .find(
+    {
+      'address.country': 'Spain',
+    },
+    {
+      _id: 0,
+      name: 1,
+      price: 1,
+      beds: 1,
+      locality: '$address.market',
+    }
+  )
+  .limit(10)
+  .sort({ price: 1 });
 ```
 
 ### Filtrando
