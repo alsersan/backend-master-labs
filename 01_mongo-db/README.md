@@ -192,7 +192,7 @@ db.listingsAndReviews.aggregate(
 ```js
 db.listingsAndReviews.aggregate({
   $group: {
-    _id: '$address.market',
+    _id: '$address.country',
     total_listings: { $sum: 1 },
   },
 });
