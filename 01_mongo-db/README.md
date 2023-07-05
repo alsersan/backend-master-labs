@@ -124,14 +124,48 @@ db.listingsAndReviews.find(
   - Sólo muestra: nombre, precio, camas, baños, rating y localidad.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find(
+  {
+    $or: [{ 'address.market': 'Barcelona' }, { 'address.country': 'Portugal' }],
+    price: { $lte: 50 },
+    'review_scores.review_scores_rating': { $gte: 88 },
+  },
+  {
+    _id: 0,
+    name: 1,
+    price: 1,
+    beds: 1,
+    rating: '$review_scores.review_scores_rating',
+    country: '$address.country',
+    locality: '$address.market',
+  }
+);
 ```
 
 - También queremos que el huésped sea un superhost y que no tengamos que pagar depósito de seguridad
   - Sólo muestra: nombre, precio, camas, baños, rating, si el huésped es superhost, depósito de seguridad y localidad.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.find(
+  {
+    $or: [{ 'address.market': 'Barcelona' }, { 'address.country': 'Portugal' }],
+    price: { $lte: 50 },
+    'review_scores.review_scores_rating': { $gte: 88 },
+    security_deposit: 0,
+    'host.host_is_superhost': true,
+  },
+  {
+    _id: 0,
+    name: 1,
+    price: 1,
+    beds: 1,
+    rating: '$review_scores.review_scores_rating',
+    country: '$address.country',
+    locality: '$address.market',
+    security_deposit: 1,
+    host_is_superhost: '$host.host_is_superhost',
+  }
+);
 ```
 
 ### Agregaciones
