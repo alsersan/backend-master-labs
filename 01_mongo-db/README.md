@@ -136,7 +136,6 @@ db.listingsAndReviews.find(
     price: 1,
     beds: 1,
     rating: '$review_scores.review_scores_rating',
-    country: '$address.country',
     locality: '$address.market',
   }
 );
@@ -160,7 +159,6 @@ db.listingsAndReviews.find(
     price: 1,
     beds: 1,
     rating: '$review_scores.review_scores_rating',
-    country: '$address.country',
     locality: '$address.market',
     security_deposit: 1,
     host_is_superhost: '$host.host_is_superhost',
