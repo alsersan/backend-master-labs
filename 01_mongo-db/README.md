@@ -174,13 +174,28 @@ db.listingsAndReviews.find(
   - Precio
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.aggregate(
+  { $match: { 'address.country': 'Spain' } },
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      locality: '$address.market',
+      price: 1,
+    },
+  }
+);
 ```
 
 - Queremos saber cuantos alojamientos hay disponibles por pais.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.aggregate({
+  $group: {
+    _id: '$address.market',
+    total_listings: { $sum: 1 },
+  },
+});
 ```
 
 ## Opcional
