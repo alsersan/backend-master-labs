@@ -13,7 +13,7 @@ En este base de datos puedes encontrar un montón de alojamientos y sus reviews,
 
 **Pregunta**. Si montaras un sitio real, ¿Qué posibles problemas pontenciales les ves a como está almacenada la información?
 
-```md
+```
 El mayor problema que veo es que todo está en una única colección. Por lo tanto, las peticiones serían muy lentas, ya que, o bien se sirve toda la colección completa en cada petición (mucha cantidad de datos transferidos) y se filtra lo que se necesite en el front, o bien se procesan los datos en el servidor antes de servirlos, lo cual reduciría el tamaño de los datos transferidos, pero también consumiría tiempo mientras se procesan los datos. Además, al provenir los datos de web scrapping, podría haber inconsistencias entre la estructura de la información representada en los distintos documentos. Lo cual es difícil de identificar debido precisamente al gran tamaño de cada documento individual y de la colección en general.
 ```
 
