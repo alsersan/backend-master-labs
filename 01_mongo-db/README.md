@@ -278,5 +278,33 @@ Queremos mostrar el top 5 de alojamientos más caros en España, con los siguent
 - Servicios, pero en vez de un array, un string con todos los servicios incluidos.
 
 ```js
-// Pega aquí tu consulta
+db.listingsAndReviews.aggregate(
+  { $match: { 'address.country': 'Spain' } },
+  { $sort: { price: -1 } },
+  { $limit: 5 },
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      price: 1,
+      bedrooms: 1,
+      beds: 1,
+      bathrooms: 1,
+      locality: '$address.market',
+      amenities: {
+        $reduce: {
+          input: '$amenities',
+          initialValue: '',
+          in: {
+            $concat: [
+              '$$value',
+              { $cond: [{ $eq: ['$$value', ''] }, '', ', '] },
+              '$$this',
+            ],
+          },
+        },
+      },
+    },
+  }
+);
 ```
