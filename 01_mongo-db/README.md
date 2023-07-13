@@ -263,6 +263,26 @@ db.listingsAndReviews.aggregate(
 );
 ```
 
+- Corrección:
+
+```js
+db.listingsAndReviews.aggregate(
+  {
+    $group: {
+      _id: { country: '$address.country', bedrooms: '$bedrooms' },
+      average_price: { $avg: '$price' },
+    },
+  },
+  {
+    $project: {
+      average_price: {
+        $round: ['$average_price', 2],
+      },
+    },
+  }
+);
+```
+
 ## Desafio
 
 Queremos mostrar el top 5 de alojamientos más caros en España, con los siguentes campos:
