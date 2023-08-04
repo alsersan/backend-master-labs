@@ -56,7 +56,7 @@ Formato del resultado:
 
 // SOLUCIÓN
 const fromCSV = (csv) => {
-  const [keys, ...values] = data.split('\n').map((el) => el.split(','));
+  const [keys, ...values] = csv.split('\n').map((el) => el.split(','));
   const parsedData = values.map((el) =>
     Object.fromEntries(keys.map((key, i) => [key, el[i] || '']))
   );
@@ -77,7 +77,7 @@ console.log(fromCSV(data, 4)); // cada usuario tendrá sólo `id`, `name`, `surn
 
 // SOLUCIÓN
 const fromCSV = (csv, nAttrs) => {
-  const [keys, ...values] = data.split('\n').map((el) => el.split(','));
+  const [keys, ...values] = csv.split('\n').map((el) => el.split(','));
   const attributeNum =
     typeof nAttrs === 'number' && nAttrs > 0 && nAttrs <= keys.length
       ? nAttrs
