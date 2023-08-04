@@ -54,6 +54,7 @@ Formato del resultado:
 ]
 */
 
+// SOLUCIÓN
 const fromCSV = (csv) => {
   const [keys, ...values] = data.split('\n').map((el) => el.split(','));
   const parsedData = values.map((el) =>
@@ -74,6 +75,7 @@ console.log(fromCSV(data, 2)); // cada usuario tendrá sólo `id` y `name`
 console.log(fromCSV(data, 3)); // cada usuario tendrá sólo `id`, `name` y `surname`
 console.log(fromCSV(data, 4)); // cada usuario tendrá sólo `id`, `name`, `surname` y `gender`
 
+// SOLUCIÓN
 const fromCSV = (csv, nAttrs) => {
   const [keys, ...values] = data.split('\n').map((el) => el.split(','));
   const attributeNum =
