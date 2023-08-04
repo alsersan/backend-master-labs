@@ -53,6 +53,14 @@ Formato del resultado:
   }
 ]
 */
+
+const fromCSV = (csv) => {
+  const [keys, ...values] = data.split('\n').map((el) => el.split(','));
+  const parsedData = values.map((el) =>
+    Object.fromEntries(keys.map((key, i) => [key, el[i] || '']))
+  );
+  return parsedData;
+};
 ```
 
 Extra: Añade un segundo argumento a la función para indicar el número de atributos a añadir.
@@ -65,6 +73,20 @@ console.log(fromCSV(data)); // Cada usuario tendrá todos los atributos como la 
 console.log(fromCSV(data, 2)); // cada usuario tendrá sólo `id` y `name`
 console.log(fromCSV(data, 3)); // cada usuario tendrá sólo `id`, `name` y `surname`
 console.log(fromCSV(data, 4)); // cada usuario tendrá sólo `id`, `name`, `surname` y `gender`
+
+const fromCSV = (csv, nAttrs) => {
+  const [keys, ...values] = data.split('\n').map((el) => el.split(','));
+  const attributeNum =
+    typeof nAttrs === 'number' && nAttrs > 0 && nAttrs <= keys.length
+      ? nAttrs
+      : keys.length;
+  const parsedData = values.map((el) =>
+    Object.fromEntries(
+      keys.slice(0, attributeNum).map((key, i) => [key, el[i] || ''])
+    )
+  );
+  return parsedData;
+};
 ```
 
 ## Ejercicio 2
