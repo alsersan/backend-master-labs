@@ -273,8 +273,13 @@ const collection = [
   },
 ];
 
+// SOLUCIÓN
 const normalize = (arr) => {
-
+  return arr.reduce((acc, val) => {
+    const { id, ...rest } = val;
+    acc[id] = rest;
+    return acc;
+  }, {});
 };
 
 const result = normalize(collection);
