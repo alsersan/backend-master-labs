@@ -39,13 +39,21 @@ de tal manera que pueda ser o `Student` o `Teacher`.
 Aplica la definición de `User` donde sea requerido solventar los errores de tipos.
 
 ```ts
+interface Student {
+  name: string;
+  age: number;
+  occupation: string;
+}
+
 interface Teacher {
   name: string;
   age: number;
   subject: string;
 }
 
-const users: Teacher[] = [
+type User = Student | Teacher;
+
+const users: User[] = [
   {
     name: 'Luke Patterson',
     age: 32,
@@ -68,7 +76,7 @@ const users: Teacher[] = [
   },
 ];
 
-const logUser = ({ name, age }: Teacher) => {
+const logUser = ({ name, age }: User) => {
   console.log(`  - ${name}, ${age}`);
 };
 
