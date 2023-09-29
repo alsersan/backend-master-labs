@@ -321,8 +321,16 @@ Si no es ni un objeto ni un array deberá de devolver dicho argumento.
 ```js
 const elements = [0, 1, false, 2, "", 3];
 
+// SOLUCIÓN
 const compact = (arg) => {
-
+  if (typeof arg !== 'object' || arg === null) return arg;
+  if (Array.isArray(arg)) return arg.filter((el) => el);
+  return Object.entries(arg).reduce((acc, [key, val]) => {
+    if (val) {
+      acc[key] = val;
+    }
+    return acc;
+  }, {});
 };
 
 console.log(compact(123)); // 123
