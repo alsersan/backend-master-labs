@@ -165,8 +165,12 @@ const data = [
   { ranking: 7.6, year: 1999, name: "Ervin", gender: "Non-binary", id: 9945, surname: "Powlowski" }
 ];
 
+// SOLUCIÓN
 const winnerByYear = (arr, year) => {
-
+  return arr
+    .filter((el) => el.year === year)
+    .sort((a, b) => b.ranking - a.ranking)
+    .slice(0, 3);
 };
 
 console.log(winnerByYear(data, 1998)) // [ 'Douglass', 'Randy', 'Monroe' ]
