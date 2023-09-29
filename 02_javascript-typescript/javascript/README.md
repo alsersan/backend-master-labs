@@ -104,8 +104,20 @@ const elements = ["lorem", "ipsum", "dolor", "sit", "amet"];
 const index = 2;
 const newValue = "furor";
 
+// SOLUCIÓN (usando slice, como dice el enunciado)
 const replaceAt = (arr, index, newElement) => {
+  if (index >= arr.length) return arr;
+  const arrFirstHalf = arr.slice(0, index);
+  const arrSecondHalf = arr.slice(index + 1);
+  return [...arrFirstHalf, newElement, ...arrSecondHalf];
+};
 
+// SOLUCIÓN (usando splice, más sentido)
+const replaceAt = (arr, index, newElement) => {
+  if (index >= arr.length) return arr;
+  const arrCopy = [...arr];
+  arrCopy.splice(index, 1, newElement);
+  return arrCopy;
 };
 
 const result = replaceAt(elements, index, newValue);
