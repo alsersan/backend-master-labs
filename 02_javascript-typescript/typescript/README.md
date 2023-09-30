@@ -183,7 +183,7 @@ Mediante genéricos y tuplas, tipa de forma completa la función para solventar 
 errores de compilación.
 
 ```ts
-const swap = (arg1, arg2) => {
+const swap = <T, U>(arg1: T, arg2: U): [U, T] => {
   return [arg2, arg1];
 };
 
