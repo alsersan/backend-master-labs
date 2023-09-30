@@ -92,7 +92,7 @@ los errores de compilación:
 ```ts
 const logUser = (user: User) => {
   let extraInfo: string;
-  if (user.occupation) {
+  if ('occupation' in user) {
     extraInfo = user.occupation;
   } else {
     extraInfo = user.subject;
@@ -103,6 +103,28 @@ const logUser = (user: User) => {
 
 > Extra: Crea dos funciones `isStudent` e `isTeacher` que apliquen la guarda y úsalas en la función `logPerson`.
 > Aplica tipado completo en la función (argumentos y valor de retorno). Utiliza [is](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates).
+
+```ts
+const isStudent = (user: User): user is Student => {
+  return (user as Student).occupation !== undefined;
+};
+
+const isTeacher = (user: User): user is Teacher => {
+  return (user as Teacher).subject !== undefined;
+};
+
+const logUser = (user: User) => {
+  let extraInfo: string;
+  if (isStudent(user)) {
+    extraInfo = user.occupation;
+  } else if (isTeacher(user)) {
+    extraInfo = user.subject;
+  } else {
+    extraInfo = 'No info';
+  }
+  console.log(`  - ${user.name}, ${user.age}, ${extraInfo}`);
+};
+```
 
 ## Ejercicio 4
 
