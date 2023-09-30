@@ -159,10 +159,10 @@ const students: Student[] = [
 
 const filterStudentsBy = (
   students: Student[],
-  criteria: unknown
+  criteria: Partial<Student>
 ): Student[] => {
-  return students.filter((user) => {
-    const criteriaKeys = Object.keys(criteria);
+  return students.filter((student) => {
+    const criteriaKeys = Object.keys(criteria) as Array<keyof Student>;
     return criteriaKeys.every((fieldName) => {
       return criteria[fieldName] === student[fieldName];
     });
