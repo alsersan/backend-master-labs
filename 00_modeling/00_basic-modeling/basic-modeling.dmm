@@ -87,6 +87,20 @@
 					"list": false,
 					"enum": "",
 					"validate": ""
+				},
+				{
+					"id": "74f1861b-c3b8-45de-9928-f2cff54f7021",
+					"name": "img",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
 				}
 			],
 			"relations": [],
@@ -959,7 +973,7 @@
 		"def_collation": "",
 		"def_others": "",
 		"customDataTypes": [],
-		"lastSaved": "6/20/2023"
+		"lastSaved": "Wed Oct 04 2023 21:16:22 GMT+0200 (Central European Summer Time)"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -979,7 +993,7 @@
 					"referencedItemId": "c5cd6679-f53a-4a05-8dd3-6a6f9d79c5f7",
 					"x": 54,
 					"y": 30,
-					"gHeight": 296,
+					"gHeight": 314,
 					"gWidth": 209,
 					"color": "#ffffff",
 					"background": "#03a9f4",
@@ -988,8 +1002,8 @@
 				},
 				"c7160b0d-1989-49ce-b735-5a833c788189": {
 					"referencedItemId": "c7160b0d-1989-49ce-b735-5a833c788189",
-					"x": 58,
-					"y": 711,
+					"x": 55,
+					"y": 731,
 					"gHeight": 225,
 					"gWidth": 232,
 					"color": "#ffffff",
@@ -1043,8 +1057,8 @@
 				},
 				"cab5c553-da28-45c4-b606-076a15c96bcf": {
 					"referencedItemId": "cab5c553-da28-45c4-b606-076a15c96bcf",
-					"x": 58,
-					"y": 333,
+					"x": 55,
+					"y": 353,
 					"gHeight": 368,
 					"gWidth": 223,
 					"color": "#ffffff",
