@@ -186,6 +186,20 @@
 					"list": true,
 					"enum": "",
 					"validate": ""
+				},
+				{
+					"id": "d84078ab-698e-4330-9e21-63d77893dcfe",
+					"name": "profilePicture",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
 				}
 			],
 			"relations": [],
@@ -605,6 +619,20 @@
 					"list": false,
 					"enum": "",
 					"validate": ""
+				},
+				{
+					"id": "f6c74d34-3e98-43e5-bacf-a9a9014fbbd1",
+					"name": "img",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
 				}
 			],
 			"relations": [],
@@ -660,6 +688,20 @@
 				{
 					"id": "0c225c44-bc2d-4800-820d-8c094f4f53ca",
 					"name": "description",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
+				},
+				{
+					"id": "fe974d3d-2ab0-4ebc-8ad4-d7a385e21c98",
+					"name": "img",
 					"datatype": "string",
 					"param": "",
 					"pk": false,
@@ -800,6 +842,20 @@
 					"list": false,
 					"enum": "",
 					"validate": ""
+				},
+				{
+					"id": "5059261b-4d1e-4bb4-afc2-ae5c739b5afe",
+					"name": "img",
+					"datatype": "string",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"list": false,
+					"enum": "",
+					"validate": ""
 				}
 			],
 			"relations": [],
@@ -885,7 +941,7 @@
 		"replaceSpace": "_",
 		"color": "transparent",
 		"sideSelections": true,
-		"isDirty": false,
+		"isDirty": true,
 		"storedin": {
 			"major": 6,
 			"minor": 4,
@@ -903,7 +959,7 @@
 		"def_collation": "",
 		"def_others": "",
 		"customDataTypes": [],
-		"lastSaved": "Tue Jun 20 2023 22:02:16 GMT+0200 (Central European Summer Time)"
+		"lastSaved": "6/20/2023"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -913,7 +969,7 @@
 			"id": "2c94912d-81a0-4541-8e70-3c46fcc03442",
 			"keysgraphics": true,
 			"linegraphics": "detailed",
-			"zoom": 1,
+			"zoom": 0.9,
 			"background": "transparent",
 			"lineColor": "transparent",
 			"isOpen": true,
@@ -932,9 +988,9 @@
 				},
 				"c7160b0d-1989-49ce-b735-5a833c788189": {
 					"referencedItemId": "c7160b0d-1989-49ce-b735-5a833c788189",
-					"x": 61,
-					"y": 653,
-					"gHeight": 207,
+					"x": 58,
+					"y": 711,
+					"gHeight": 225,
 					"gWidth": 232,
 					"color": "#ffffff",
 					"background": "#03a9f4",
@@ -989,7 +1045,7 @@
 					"referencedItemId": "cab5c553-da28-45c4-b606-076a15c96bcf",
 					"x": 58,
 					"y": 333,
-					"gHeight": 314,
+					"gHeight": 368,
 					"gWidth": 223,
 					"color": "#ffffff",
 					"background": "#03a9f4",
